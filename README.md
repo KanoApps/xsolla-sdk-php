@@ -13,34 +13,36 @@ An official PHP SDK for interacting with [Xsolla API](https://developers.xsolla.
 ![Payment UI screenshot](http://xsolla.cachefly.net/img/ps3_github2.png)
 
 This SDK can be used for:
-* obtaining an authorization token
-* processing of basic webhooks (user_validation, payment, refund, etc)
+
+- obtaining an authorization token
+- processing of basic webhooks (user_validation, payment, refund, etc)
 
 ## Features
 
-* Full customisation of Payment UI with the help of different methods of getting token.
-* Client for all API methods, making your integration easy and convenient. You can use it for setting up and updating virtual currency, items and subscription plans, for managing the users balance, for checking the finance information with the help of Report API and so on.
-* Convenient webhook server:
-  * To start you need only one callback function.
-  * All security checking already implemented: signature authentication and IP whitelisting.
-  * Full customisation of notification processing logic, if standard server class doesn’t suit you.
-* SDK is built on Guzzle v3, and utilizes many of its features, including persistent connections, parallel requests, events and plugins (via Symfony2 EventDispatcher), service descriptions, over-the-wire logging, caching, flexible batching, and request retrying with truncated exponential back off.
+- Full customisation of Payment UI with the help of different methods of getting token.
+- Client for all API methods, making your integration easy and convenient. You can use it for setting up and updating virtual currency, items and subscription plans, for managing the users balance, for checking the finance information with the help of Report API and so on.
+- Convenient webhook server:
+  - To start you need only one callback function.
+  - All security checking already implemented: signature authentication and IP whitelisting.
+  - Full customisation of notification processing logic, if standard server class doesn’t suit you.
+- SDK is built on Guzzle v3, and utilizes many of its features, including persistent connections, parallel requests, events and plugins (via Symfony2 EventDispatcher), service descriptions, over-the-wire logging, caching, flexible batching, and request retrying with truncated exponential back off.
 
 ## Requirements
 
-* PHP ^7.3 or ^8.0
-* The following PHP extensions are required:
-  * curl
-  * json
+- PHP ^7.3 or ~8.0
+- The following PHP extensions are required:
+  - curl
+  - json
 
 ## Getting Started
 
 Please register your [Publisher Account](https://publisher.xsolla.com/signup) and create the project.
 In order to use the PHP SDK Library you'll need:
-* MERCHANT_ID
-* API_KEY
-* PROJECT_ID
-* PROJECT_KEY
+
+- MERCHANT_ID
+- API_KEY
+- PROJECT_ID
+- PROJECT_KEY
 
 You can obtain these parameters using the information in your [Company Profile](https://publisher.xsolla.com/company) and [Project Settings](https://publisher.xsolla.com/projects).
 
@@ -50,7 +52,7 @@ You can obtain these parameters using the information in your [Company Profile](
 
 The recommended way to install Xsolla SDK for PHP is through [Composer](http://getcomposer.org).
 
-``` bash
+```bash
 $ cd /path/to/your/project
 $ composer require xsolla/xsolla-sdk-php
 ```
@@ -65,7 +67,7 @@ require '/path/to/vendor/autoload.php';
 
 You can [download the packaged phar](https://github.com/xsolla/xsolla-sdk-php/releases) and include it in your scripts to get started:
 
-``` php
+```php
 require '/path/to/xsolla.phar';
 ```
 
@@ -73,7 +75,7 @@ require '/path/to/xsolla.phar';
 
 You can [download the zip file](https://github.com/xsolla/xsolla-sdk-php/releases), unzip it into your project to a location of your choosing, and include the autoloader:
 
-``` php
+```php
 require '/path/to/xsolla-autoloader.php';
 ```
 
@@ -85,7 +87,7 @@ To integrate Payment UI into your game you should obtain an access token. An acc
 
 There are number of ways for getting token. The easiest one is to use the _createCommonPaymentUIToken_ method, you will need to pass only ID of project in Xsolla system and ID of the user in your game:
 
-``` php
+```php
 <?php
 
 use Xsolla\SDK\API\XsollaClient;
@@ -99,18 +101,19 @@ $paymentUIToken = $client->createCommonPaymentUIToken(PROJECT_ID, USER_ID, $sand
 
 Render Payment UI script in your page:
 
-``` php
+```php
 <html>
 <head lang="en">
     <meta charset="UTF-8">
 </head>
 <body>
     <button data-xpaystation-widget-open>Buy Credits</button>
-    
+
     <?php \Xsolla\SDK\API\PaymentUI\PaymentUIScriptRenderer::send($paymentUIToken, $isSandbox = true); ?>
 </body>
 </html>
 ```
+
 ### Receive webhooks
 
 There is a build in server class to help you to handle the webhooks.
@@ -158,7 +161,7 @@ Please take a look at the [CONTRIBUTING.md](CONTRIBUTING.md) to see how to get y
 
 ## Additional resources
 
-* [Website](http://xsolla.com)
-* [Documentation](http://developers.xsolla.com)
-* [Status](http://status.xsolla.com)
-* [Support and Feedback](mailto:integration@xsolla.com)
+- [Website](http://xsolla.com)
+- [Documentation](http://developers.xsolla.com)
+- [Status](http://status.xsolla.com)
+- [Support and Feedback](mailto:integration@xsolla.com)

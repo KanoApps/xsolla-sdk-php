@@ -1,6 +1,8 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 ## [Unreleased](https://github.com/xsolla/xsolla-sdk-php/compare/v4.2.0...master)
+### Added
+* Changed version of guzzlehttp/guzzle from ~6.0 to ~7.0
 
 ## [v4.3.1](https://github.com/xsolla/xsolla-sdk-php/compare/v4.3.0...v4.3.1) - 2024-30-01
 ### Fixed
